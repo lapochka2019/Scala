@@ -46,7 +46,11 @@ object Adts {
     println("Exercise 4")
     println(safeDivide(2,0))
     println(safeDivide(10,5))
-  }
+    def badFunc(str: String): Int = str(0).toInt / 0
+    def goodFunc(str: String): Int = str.toInt
+    println(testGoodOldJava(goodFunc, "123"))
+    println(testGoodOldJava(badFunc, "123"))
+    }
 
   // a) Дан List[Int], верните элемент с индексом n
 def GetNth( list:List[Int], n:Int):Option[Int] = list match {
